@@ -6,12 +6,8 @@ using namespace std;
 using ll = long long;
 
 int main() {
-  string a,b;
+  int a,b;
   cin>>a>>b;
   
-  reverse(b.begin(),b.end());
-  
-  string ans = "NO";
-  if(a == b) ans = "YES";
-  cout<<ans<<endl;
+  cout<<(2*a+100)-b<<endl;
 }

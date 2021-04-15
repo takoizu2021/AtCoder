@@ -6,12 +6,10 @@ using namespace std;
 using ll = long long;
 
 int main() {
-  string a,b;
-  cin>>a>>b;
+  int n;
+  cin >> n;
   
-  reverse(b.begin(),b.end());
-  
-  string ans = "NO";
-  if(a == b) ans = "YES";
-  cout<<ans<<endl;
+  int ans = 1;
+  for(int i=1;i*i<=n;i++) ans = max(ans,i*i);
+  cout << ans << endl;
 }
