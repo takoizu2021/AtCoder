@@ -7,14 +7,14 @@ using namespace std;
 using ll = long long;
 
 int main() {
-  int n,l;
-  cin>>n>>l;
+  int d,n;
+  cin>>d>>n;
   
-  vector<string> s(n);
-  rep(i,n) cin>>s[i];
+  int ans=0;
+  if(n==100) n=101;
+  if(d==0) ans=n;
+  else if(d==1) ans=100*n;
+  else if(d==2) ans=100*100*n;
   
-  sort(s.begin(),s.end());
-  
-  rep(i,n) cout<<s[i];
-  cout<<endl;
+  cout<<ans<<endl;
 }

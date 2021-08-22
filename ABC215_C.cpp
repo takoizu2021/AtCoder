@@ -7,14 +7,13 @@ using namespace std;
 using ll = long long;
 
 int main() {
-  int n,l;
-  cin>>n>>l;
-  
-  vector<string> s(n);
-  rep(i,n) cin>>s[i];
+  string s;
+  int k;
+  cin>>s>>k;
   
   sort(s.begin(),s.end());
   
-  rep(i,n) cout<<s[i];
-  cout<<endl;
+  rep(i,k-1) next_permutation(s.begin(),s.end());
+  
+  cout<<s<<endl;
 }

@@ -7,14 +7,19 @@ using namespace std;
 using ll = long long;
 
 int main() {
-  int n,l;
-  cin>>n>>l;
+  ll n;
+  cin>>n;
   
-  vector<string> s(n);
-  rep(i,n) cin>>s[i];
+  ll k=2, ans=1;
+  if(n==1) ans=0;
+  else {
+    while(k<=n) {
+      ans++;
+      k*=2;
+      //cout<<ans<<":"<<k<<endl;
+    }
+    ans--;
+  }
   
-  sort(s.begin(),s.end());
-  
-  rep(i,n) cout<<s[i];
-  cout<<endl;
+  cout<<ans<<endl;  
 }

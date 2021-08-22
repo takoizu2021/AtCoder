@@ -7,14 +7,11 @@ using namespace std;
 using ll = long long;
 
 int main() {
-  int n,l;
-  cin>>n>>l;
+  string s;
+  cin>>s;
   
-  vector<string> s(n);
-  rep(i,n) cin>>s[i];
+  string ans="WA";
+  if(s=="Hello,World!") ans="AC";
   
-  sort(s.begin(),s.end());
-  
-  rep(i,n) cout<<s[i];
-  cout<<endl;
+  cout<<ans<<endl;
 }
