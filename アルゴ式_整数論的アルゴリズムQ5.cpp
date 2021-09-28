@@ -5,7 +5,7 @@ const int inf = 1000000;
 
 bool chk (int x) {
 	if(x < 2) return false;
-	for(int i=2; i*i<x; ++i) {
+	for(int i=2; i*i<=x; ++i) {
 		if(x%i==0) return false;		
 	}
 	return true;
@@ -14,9 +14,10 @@ bool chk (int x) {
 int main() {
 	int n;
 	cin>>n;
-	
-	while(!chk(n)) n--;
 
-	cout << n << endl;
+	int p=0;
+	for(int q=1; q<n; ++q) if(chk(q) && chk(n-q)) p=n-q;
+	
+	cout << p << endl;
 	return 0;
 }
