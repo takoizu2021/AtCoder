@@ -8,25 +8,19 @@ const long long inf = 10000000000000; //10^13
 using ll = long long;
 
 int main() {
-    int n,m,x;
-    cin>>n>>m>>x;
-    vector<vector<int> > g(n);
-    rep(i,m) {
-        int a,b;
-        cin>>a>>b;
-        g[a].push_back(b);
-        g[b].push_back(a);
+	int n,x;
+	cin>>n>>x;
+    vector<int> a(n);
+    for(int i=1; i<n; ++i) {
+        cin>>a[i];
     }
 
-    set<int> f;
-    for(auto v : g[x]) f.insert(v);
-
-    set<int> res;
-    for(auto v : g[x]) {
-        for(int w : g[v]) {
-            if(w != x && !f.count(w)) res.insert(w);
-        }
+    int res=0;
+    while(x!=0) {
+        res++;
+        x = a[x];
     }
-	cout << res.size() << endl;
+	
+	cout << res << endl;
 	return 0;
 }
